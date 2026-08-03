@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── TerraMove brand roles ── */
+    --cream: 33 60% 95%; /* #FBF3E9 warm ivory */
+    --forest: 146 27% 12%; /* #16261C deep forest */
+    --ink: 213 39% 18%; /* #1B2A3D navy-charcoal */
+    --brand: 31 89% 48%; /* #E8720E saturated orange */
+    --brand-soft: 31 90% 94%;
+    --brand-dark: 28 90% 40%;
+    --gold: 36 85% 59%; /* #F0A93B amber */
+
+    /* ── shadcn token mapping ── */
+    --background: 33 60% 95%;
+    --foreground: 213 39% 18%;
+    --card: 0 0% 100%;
+    --card-foreground: 213 39% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 39% 18%;
+    --primary: 31 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 33 45% 90%;
+    --secondary-foreground: 213 39% 18%;
+    --muted: 33 30% 90%;
+    --muted-foreground: 213 15% 42%;
+    --accent: 33 50% 92%;
+    --accent-foreground: 213 39% 18%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 25% 86%;
+    --input: 30 25% 86%;
+    --ring: 31 89% 48%;
+    --radius: 0.75rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-cream text-ink font-sans antialiased;
+    font-feature-settings: "cv11", "ss01";
+  }
+
+  /* Display serif tightens up nicely for big headings */
+  .font-display {
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+  /* Eyebrow: small uppercase letter-spaced accent label above headings */
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-brand;
+  }
+  .eyebrow-gold {
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-gold;
+  }
+
+  /* Section vertical rhythm */
+  .section-y {
+    @apply py-16 md:py-24;
+  }
+}
+
+@layer utilities {
+  /* Hide scrollbars on horizontal carousels while keeping scroll */
+  .scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Cream section can bleed edge-to-edge; content stays in container */
+  .bg-cream-grid {
+    background-image: radial-gradient(
+      hsl(var(--ink) / 0.04) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+}
