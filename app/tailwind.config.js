@@ -67,10 +67,10 @@ export default {
         "3xl": "calc(var(--radius) + 18px)",
       },
       fontFamily: {
-        // Display serif for headings, grotesque sans for body/UI
-        display: ['"Playfair Display"', "Georgia", "serif"],
+        // Warm, soft-curved display serif for headings; geometric sans for body/UI
+        display: ['"Fraunces"', "Georgia", "serif"],
         sans: [
-          "Inter",
+          '"Plus Jakarta Sans"',
           "ui-sans-serif",
           "system-ui",
           "-apple-system",
@@ -101,12 +101,17 @@ export default {
           "0%, 100%": { opacity: "1" },
           "50%": { opacity: "0.35" },
         },
+        "ken-burns": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.1)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both",
         "fade-in": "fade-in 0.5s ease-out both",
         "sheet-in": "sheet-in 0.28s cubic-bezier(0.22, 1, 0.36, 1)",
         "pulse-dot": "pulse-dot 1.4s ease-in-out infinite",
+        "ken-burns": "ken-burns 20s ease-in-out infinite alternate",
       },
     },
   },

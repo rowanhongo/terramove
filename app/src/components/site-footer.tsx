@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import { Facebook, Heart, Instagram, Twitter, Youtube } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { Img } from "@/components/marketing/img";
 import { FOOTER_LINKS } from "@/lib/nav";
+import { img } from "@/lib/content";
 
 const SOCIALS = [
   { label: "Instagram", Icon: Instagram },
@@ -10,12 +12,27 @@ const SOCIALS = [
   { label: "YouTube", Icon: Youtube },
 ];
 
+// A glimpse of the range TerraMove covers, instead of a flat fill.
+const BACKDROP = [
+  { src: img("photo-1579518874869-1ad294d2596f", 700, 900), alt: "Kigali Convention Centre lit up at night" },
+  { src: img("photo-1547970810-dc1eac37d174", 700, 900), alt: "Mountain gorilla in Volcanoes National Park" },
+  { src: img("photo-1502680390469-be75c86b636f", 700, 900), alt: "Lake Kivu at sunset" },
+];
+
 export function SiteFooter() {
   const columns = [FOOTER_LINKS.explore, FOOTER_LINKS.company, FOOTER_LINKS.support];
 
   return (
-    <footer className="bg-forest text-white/70">
-      <div className="container py-14 md:py-16">
+    <footer className="relative overflow-hidden text-white/70">
+      {/* Backdrop: convention centre / gorillas / Lake Kivu, dimmed under a tint */}
+      <div className="absolute inset-0 grid grid-cols-3">
+        {BACKDROP.map((item) => (
+          <Img key={item.src} src={item.src} alt={item.alt} className="h-full w-full" />
+        ))}
+      </div>
+      <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/88 to-forest/95" />
+
+      <div className="container relative py-14 md:py-16">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           {/* Brand + blurb + social */}
           <div className="max-w-sm">

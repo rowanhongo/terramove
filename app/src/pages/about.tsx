@@ -52,7 +52,7 @@ export default function AboutPage() {
             <p className="eyebrow">The mission</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl">
               We help the world meet the{" "}
-              <span className="italic text-brand">real Rwanda</span>.
+              <span className="text-brand">real Rwanda</span>.
             </h2>
             <p className="mt-5 leading-relaxed text-ink/65">
               From the misty volcanoes of the north to the shimmering shores of
@@ -95,7 +95,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow-gold">Since 2021</p>
           <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-            A journey worth <span className="italic text-gold">sharing</span>.
+            A journey worth <span className="text-gold">sharing</span>.
           </h2>
         </div>
         <div className="mt-10">

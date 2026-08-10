@@ -1,5 +1,6 @@
 import { Globe, Mountain, Smile, Star } from "lucide-react";
 import type { Stat } from "@/lib/content";
+import { cn } from "@/lib/utils";
 
 const ICONS = {
   smile: Smile,
@@ -8,10 +9,17 @@ const ICONS = {
   globe: Globe,
 } as const;
 
-/** 4 white rounded stat cards; 2×2 on mobile, single row on desktop. */
-export function StatRow({ stats }: { stats: Stat[] }) {
+/** 4 white rounded stat cards; 2×2 on mobile, single row on desktop by default. */
+export function StatRow({
+  stats,
+  className,
+}: {
+  stats: Stat[];
+  /** Override the responsive grid — useful when the row sits in a narrower column. */
+  className?: string;
+}) {
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <div className={cn("grid grid-cols-2 gap-4 lg:grid-cols-4", className)}>
       {stats.map((stat) => {
         const Icon = ICONS[stat.icon];
         return (

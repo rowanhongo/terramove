@@ -9,8 +9,6 @@ import HomePage from "@/pages/home";
 import AdventuresPage from "@/pages/adventures";
 import StayPage from "@/pages/stay";
 import CityToursPage from "@/pages/city-tours";
-import AirportPage from "@/pages/airport";
-import AiPlannerPage from "@/pages/ai-planner";
 import AboutPage from "@/pages/about";
 import ContactPage from "@/pages/contact";
 import { AuthPage } from "@/pages/auth";
@@ -34,8 +32,6 @@ export default function App() {
         <Route path="/adventures" element={<AdventuresPage />} />
         <Route path="/stay" element={<StayPage />} />
         <Route path="/city-tours" element={<CityToursPage />} />
-        <Route path="/airport" element={<AirportPage />} />
-        <Route path="/ai-planner" element={<AiPlannerPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<ContactPage />} />
         <Route path="/signin" element={<AuthPage mode="signin" />} />

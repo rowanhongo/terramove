@@ -57,7 +57,7 @@ export function PageHero({
           {accent && (
             <>
               {" "}
-              <span className="font-display italic text-brand">{accent}</span>
+              <span className="font-display text-brand">{accent}</span>
             </>
           )}
         </h1>

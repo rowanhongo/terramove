@@ -1,10 +1,9 @@
 import { AppShell } from "@/components/app-shell";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section } from "@/components/marketing/section";
-import { StatRow } from "@/components/marketing/stat-row";
 import { ExperienceCard } from "@/components/marketing/experience-card";
 import { Badge } from "@/components/ui/badge";
-import { EXPERIENCES, STATS } from "@/lib/content";
+import { EXPERIENCES } from "@/lib/content";
 
 const FILTERS = ["All", "Wildlife", "Water", "Nature", "Culture"];
 
@@ -44,19 +43,6 @@ export default function AdventuresPage() {
           {EXPERIENCES.map((item) => (
             <ExperienceCard key={item.id} item={item} />
           ))}
-        </div>
-      </Section>
-
-      {/* Stats band */}
-      <Section tone="forest" className="section-y">
-        <div className="mx-auto max-w-2xl text-center">
-          <p className="eyebrow-gold">By the Numbers</p>
-          <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-            Adventures that <span className="italic text-gold">deliver</span>.
-          </h2>
-        </div>
-        <div className="mt-10">
-          <StatRow stats={STATS} />
         </div>
       </Section>
     </AppShell>

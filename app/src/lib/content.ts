@@ -3,7 +3,7 @@
  * Imagery uses Unsplash source URLs so the build has no local binary assets.
  */
 
-const img = (id: string, w = 800, h = 600) =>
+export const img = (id: string, w = 800, h = 600) =>
   `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=80`;
 
 export interface Experience {
@@ -183,89 +183,6 @@ export const TOURS: Tour[] = [
   },
 ];
 
-export interface Vehicle {
-  id: string;
-  name: string;
-  model: string;
-  capacity: string;
-  price: number;
-  features: string[];
-}
-
-export const VEHICLES: Vehicle[] = [
-  {
-    id: "sedan",
-    name: "Economy Sedan",
-    model: "Toyota Corolla · 1–3 passengers",
-    capacity: "1–3",
-    price: 25,
-    features: ["A/C", "Charger", "Water"],
-  },
-  {
-    id: "suv",
-    name: "Business SUV",
-    model: "Toyota Land Cruiser · 1–5 passengers",
-    capacity: "1–5",
-    price: 45,
-    features: ["Premium A/C", "WiFi", "Charger", "Snacks"],
-  },
-  {
-    id: "minivan",
-    name: "Luxury Minivan",
-    model: "Toyota HiAce Commuter · 1–8 passengers",
-    capacity: "1–8",
-    price: 80,
-    features: ["Premium A/C", "WiFi", "Meet & Greet", "Child seat", "Luggage assist"],
-  },
-];
-
-export interface Testimonial {
-  id: string;
-  name: string;
-  country: string;
-  tag: string;
-  quote: string;
-  likes: number;
-  avatar: string;
-  image: string;
-}
-
-export const TESTIMONIALS: Testimonial[] = [
-  {
-    id: "sarah",
-    name: "Sarah Mitchell",
-    country: "GB",
-    tag: "Gorilla Trekking",
-    quote:
-      "The gorilla trekking was the most humbling experience of my life. Just book it — no words can describe it.",
-    likes: 247,
-    avatar: img("photo-1494790108377-be9c29b29330", 100, 100),
-    image: img("photo-1547970810-dc1eac37d174"),
-  },
-  {
-    id: "marcus",
-    name: "Marcus Torres",
-    country: "US",
-    tag: "Lake Kivu Kayaking",
-    quote:
-      "Lake Kivu at sunset is something otherworldly. Paddled to a little island and sat in silence for an hour. Rwanda, you changed me.",
-    likes: 389,
-    avatar: img("photo-1500648767791-00dcc994a43e", 100, 100),
-    image: img("photo-1502680390469-be75c86b636f"),
-  },
-  {
-    id: "yuki",
-    name: "Yuki Nakamura",
-    country: "JP",
-    tag: "Kigali Cultural Tour",
-    quote:
-      "Kigali genuinely surprised me — cleanest city I've ever visited. The food tour was 10/10 and Diane is the most brilliant guide.",
-    likes: 511,
-    avatar: img("photo-1438761681033-6461ffad8d80", 100, 100),
-    image: img("photo-1517248135467-4c7edcad34c4"),
-  },
-];
-
 export interface Stat {
   value: string;
   label: string;
@@ -278,10 +195,3 @@ export const STATS: Stat[] = [
   { value: "98%", label: "Satisfaction Rate", icon: "star" },
   { value: "5", label: "Languages Spoken", icon: "globe" },
 ];
-
-export const TRUST_SIGNALS = [
-  { icon: "ticket", label: "Gorilla permits included" },
-  { icon: "shield-check", label: "Free cancellation 48h" },
-  { icon: "badge-dollar", label: "Best price guarantee" },
-  { icon: "shield", label: "24/7 verified guides" },
-] as const;

@@ -1,9 +1,9 @@
 <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="tm-bg" x1="0" y1="0" x2="64" y2="64" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F0A93B" />
-      <stop offset="0.55" stop-color="#E8720E" />
-      <stop offset="1" stop-color="#C85D08" />
+      <stop stop-color="#D3A445" />
+      <stop offset="0.55" stop-color="#E0621F" />
+      <stop offset="1" stop-color="#A7471B" />
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="18" fill="url(#tm-bg)" />
@@ -14,5 +14,5 @@
     stroke-width="2"
     stroke-linejoin="round"
   />
-  <circle cx="27" cy="22" r="2.4" fill="#16261C" />
+  <circle cx="27" cy="22" r="2.4" fill="#221A16" />
 </svg>
