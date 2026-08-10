@@ -25,6 +25,9 @@ export function SiteHeader({ overHero = false, scrollRef }: SiteHeaderProps) {
   // Close the mobile drawer whenever the route changes.
   useEffect(() => setMenuOpen(false), [pathname]);
 
+  // Non-hero pages have no transparent state to reveal — they're always glass.
+  // Hero pages fade from transparent to glass once the hero scrolls by, but
+  // the bar itself never hides — it stays fixed/sticky through the whole scroll.
   useEffect(() => {
     if (!overHero) {
       setScrolled(true);
@@ -32,9 +35,7 @@ export function SiteHeader({ overHero = false, scrollRef }: SiteHeaderProps) {
     }
     const target: HTMLElement | Window = scrollRef?.current ?? window;
     const readScroll = () =>
-      scrollRef?.current
-        ? scrollRef.current.scrollTop
-        : window.scrollY;
+      scrollRef?.current ? scrollRef.current.scrollTop : window.scrollY;
     const onScroll = () => setScrolled(readScroll() > 24);
     onScroll();
     target.addEventListener("scroll", onScroll, { passive: true });
@@ -46,10 +47,10 @@ export function SiteHeader({ overHero = false, scrollRef }: SiteHeaderProps) {
   return (
     <header
       className={cn(
-        "z-50 w-full transition-colors duration-300",
-        overHero ? "absolute inset-x-0 top-0" : "sticky top-0",
+        "z-50 w-full transition-[background-color,box-shadow] duration-300",
+        overHero ? "fixed inset-x-0 top-0" : "sticky top-0",
         solid
-          ? "border-b border-ink/5 bg-cream/90 backdrop-blur-md"
+          ? "border-b border-white/15 bg-cream/70 shadow-[0_8px_30px_-12px_rgba(15,23,42,0.25)] backdrop-blur-xl backdrop-saturate-150"
           : "bg-transparent"
       )}
     >
