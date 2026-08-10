@@ -10,7 +10,7 @@ export default function NotFoundPage() {
         <div className="mx-auto max-w-lg text-center">
           <p className="font-display text-7xl font-bold text-brand">404</p>
           <h1 className="mt-4 font-display text-3xl font-bold text-ink sm:text-4xl">
-            This trail leads <span className="italic text-brand">nowhere</span>.
+            This trail leads <span className="text-brand">nowhere</span>.
           </h1>
           <p className="mt-4 text-ink/60">
             The page you're looking for has wandered off into the hills. Let's

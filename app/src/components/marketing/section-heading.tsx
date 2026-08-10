@@ -19,7 +19,7 @@ interface SectionHeadingProps {
 
 /**
  * Signature section header: letter-spaced eyebrow + high-contrast serif title
- * where the emotional word is set in a contrasting italic accent color.
+ * where the emotional word is set in a contrasting accent color.
  */
 export function SectionHeading({
   eyebrow,
@@ -56,7 +56,7 @@ export function SectionHeading({
           {accent && (
             <>
               {" "}
-              <span className="font-display italic text-brand">{accent}</span>
+              <span className="font-display text-brand">{accent}</span>
             </>
           )}
         </h2>

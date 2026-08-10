@@ -35,7 +35,7 @@ export function AuthPage({ mode }: AuthPageProps) {
           <div>
             <h2 className="max-w-sm font-display text-4xl font-bold leading-tight">
               The Land of a{" "}
-              <span className="italic text-gold">Thousand Hills</span> awaits.
+              <span className="text-gold">Thousand Hills</span> awaits.
             </h2>
             <ul className="mt-6 space-y-2.5">
               {PERKS.map((perk) => (
@@ -71,11 +71,11 @@ export function AuthPage({ mode }: AuthPageProps) {
           <h1 className="mt-3 font-display text-3xl font-bold tracking-tight text-ink sm:text-4xl">
             {isSignup ? (
               <>
-                Start your <span className="italic text-brand">Rwanda story</span>
+                Start your <span className="text-brand">Rwanda story</span>
               </>
             ) : (
               <>
-                Sign in to <span className="italic text-brand">TerraMove</span>
+                Sign in to <span className="text-brand">TerraMove</span>
               </>
             )}
           </h1>

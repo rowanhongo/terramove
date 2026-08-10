@@ -28,7 +28,7 @@ export function Logo({ tone = "dark", className }: LogoProps) {
             strokeWidth="2.5"
             strokeLinejoin="round"
           />
-          <circle cx="27" cy="21" r="2.6" fill="#16261C" />
+          <circle cx="27" cy="21" r="2.6" fill="hsl(var(--forest))" />
         </svg>
       </span>
       <span className="flex flex-col leading-none">
