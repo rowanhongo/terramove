@@ -1,15 +1,17 @@
 import { Link } from "react-router-dom";
-import { Facebook, Heart, Instagram, Twitter, Youtube } from "lucide-react";
+import { Heart, Instagram, Linkedin } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { Img } from "@/components/marketing/img";
 import { FOOTER_LINKS } from "@/lib/nav";
 import { img } from "@/lib/content";
+import { TikTokIcon } from "@/components/icons/tiktok";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 
 const SOCIALS = [
-  { label: "Instagram", Icon: Instagram },
-  { label: "Twitter", Icon: Twitter },
-  { label: "Facebook", Icon: Facebook },
-  { label: "YouTube", Icon: Youtube },
+  { label: "Instagram", href: "#", Icon: Instagram },
+  { label: "LinkedIn", href: "#", Icon: Linkedin },
+  { label: "TikTok", href: "#", Icon: TikTokIcon },
+  { label: "WhatsApp", href: "https://wa.me/250788000000", Icon: WhatsAppIcon },
 ];
 
 // A glimpse of the range TerraMove covers, instead of a flat fill.
@@ -38,14 +40,14 @@ export function SiteFooter() {
           <div className="max-w-sm">
             <Logo tone="light" />
             <p className="mt-5 text-sm leading-relaxed text-white/60">
-              The premium way to experience Rwanda — gorillas, culture, lake
-              vistas, and the warmth of a thousand hills.
+              Founded in Kigali in 2021 by people who grew up here and got
+              tired of watching it get flattened into a highlight reel.
             </p>
             <div className="mt-6 flex items-center gap-3">
-              {SOCIALS.map(({ label, Icon }) => (
+              {SOCIALS.map(({ label, href, Icon }) => (
                 <a
                   key={label}
-                  href="#"
+                  href={href}
                   aria-label={label}
                   className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white/80 transition-colors hover:bg-brand hover:text-white"
                 >
@@ -82,13 +84,7 @@ export function SiteFooter() {
             © {new Date().getFullYear()} TerraMove Tours. All rights reserved. Made with
             <Heart className="h-3.5 w-3.5 fill-brand text-brand" /> in Kigali, Rwanda.
           </p>
-          <p className="flex items-center gap-2">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-emerald-400" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
-            </span>
-            All systems operational
-          </p>
+          <p>EN · FR · RW — we reply in whichever you write in.</p>
         </div>
       </div>
     </footer>

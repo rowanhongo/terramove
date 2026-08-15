@@ -34,7 +34,7 @@ export function PageHero({
       {isImage && image && (
         <div className="absolute inset-0 overflow-hidden">
           <Img src={image} alt="" loading="eager" className="h-full w-full" />
-          <div className="absolute inset-0 bg-gradient-to-b from-forest/80 via-forest/60 to-forest/90" />
+          <div className="absolute inset-0 scrim-b" />
         </div>
       )}
 

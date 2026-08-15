@@ -2,7 +2,7 @@ import { AppShell } from "@/components/app-shell";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section } from "@/components/marketing/section";
 import { StayCard } from "@/components/marketing/stay-card";
-import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import { STAYS } from "@/lib/content";
 
 const TYPES = ["All stays", "Penthouse", "Villa", "Cottage", "Lodge"];
@@ -11,35 +11,40 @@ export default function StayPage() {
   return (
     <AppShell>
       <PageHero
-        eyebrow="Where to Stay"
-        title="Stays With a"
-        accent="View"
-        description="Verified hosts, honest prices, and locations that put you right where the magic happens — from Kigali rooftops to Lake Kivu shorelines."
+        eyebrow="Beds, Booked Directly"
+        title="Skip the resort."
+        accent="Stay with someone who lives here."
+        description="Rooftop apartments in Kigali, lakeside cottages in Rubavu, a canopy lodge in Nyungwe — all run by hosts you can actually message."
       />
 
+      {/* Plain underlined tabs instead of pill filters — deliberately a
+          different control shape than Adventures' filter chips. */}
       <Section tone="cream" padded={false} className="pb-10">
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-6 border-b border-ink/10">
           {TYPES.map((type, i) => (
-            <Badge
+            <button
               key={type}
-              variant={i === 0 ? "brand" : "light"}
-              size="md"
-              className={
+              type="button"
+              className={cn(
+                "-mb-px border-b-2 pb-3 text-sm font-medium transition-colors",
                 i === 0
-                  ? "cursor-pointer"
-                  : "cursor-pointer border border-ink/10 !bg-white text-ink/70 hover:text-brand"
-              }
+                  ? "border-brand text-brand"
+                  : "border-transparent text-ink/55 hover:text-ink"
+              )}
             >
               {type}
-            </Badge>
+            </button>
           ))}
         </div>
       </Section>
 
+      {/* First stay runs wide as a featured pick, rest fall into a 2-up grid. */}
       <Section tone="cream" padded={false} className="pb-16 md:pb-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {STAYS.map((item) => (
-            <StayCard key={item.id} item={item} />
+          {STAYS.map((item, i) => (
+            <div key={item.id} className={i === 0 ? "sm:col-span-2" : undefined}>
+              <StayCard item={item} />
+            </div>
           ))}
         </div>
       </Section>

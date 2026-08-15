@@ -1,10 +1,20 @@
-import { Map, PawPrint, Sparkles, Tent, Users } from "lucide-react";
-import { VideoBg } from "@/components/marketing/video-bg";
+import { Instagram, Linkedin, Map, PawPrint, Tent, Users } from "lucide-react";
+import { VideoMontage } from "@/components/marketing/video-montage";
 import { SearchTrigger } from "@/components/marketing/search-trigger";
+import { TikTokIcon } from "@/components/icons/tiktok";
+import { WhatsAppIcon } from "@/components/icons/whatsapp";
 
 const HERO_IMG =
   "https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1920&h=1280&q=80";
-const HERO_VIDEO = "https://assets.mixkit.co/videos/3876/3876-720.mp4";
+
+// One clip per adventure category, cross-fading on a loop so the hero
+// reads as a highlight reel of Rwanda's range instead of one scene.
+const HERO_CLIPS = [
+  { src: "https://assets.mixkit.co/videos/11146/11146-720.mp4", poster: HERO_IMG }, // wildlife
+  { src: "https://assets.mixkit.co/videos/102/102-720.mp4" }, // night market / city
+  { src: "https://assets.mixkit.co/videos/10990/10990-720.mp4" }, // waterfall / nature stay
+  { src: "https://assets.mixkit.co/videos/4028/4028-720.mp4" }, // rolling hills / group trek
+];
 
 const SERVICES = [
   { label: "Gorilla Treks", Icon: PawPrint },
@@ -13,53 +23,62 @@ const SERVICES = [
   { label: "Group Trips", Icon: Users },
 ];
 
+const SOCIALS = [
+  { label: "Instagram", href: "#", Icon: Instagram },
+  { label: "LinkedIn", href: "#", Icon: Linkedin },
+  { label: "TikTok", href: "#", Icon: TikTokIcon },
+  { label: "WhatsApp", href: "https://wa.me/250788000000", Icon: WhatsAppIcon },
+];
+
 /**
- * Home hero: full-bleed looping video + dark gradient overlay, pill badge,
- * serif headline (roman + gold accent), one supporting line. The "Where
- * in Rwanda" trigger breaks from the centered text to float off to the
- * side — an asymmetric beat that keeps the hero from reading as flatly
- * symmetric.
+ * Home hero: full-bleed crossfading video montage + dark gradient overlay,
+ * plain eyebrow label, serif headline. The "Where in Rwanda" trigger
+ * breaks from the centered text to float off to the side — an asymmetric
+ * beat that keeps the hero from reading as flatly symmetric.
  */
 export function Hero() {
   return (
-    <section className="relative">
+    <section className="relative flex min-h-svh flex-col overflow-hidden">
       {/* Full-bleed background */}
       <div className="absolute inset-0 overflow-hidden">
-        <VideoBg
-          src={HERO_VIDEO}
-          poster={HERO_IMG}
-          className="pointer-events-none"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/70 via-forest/45 to-forest/85" />
-        <div className="absolute inset-0 bg-gradient-to-t from-cream via-transparent to-transparent" />
+        <VideoMontage clips={HERO_CLIPS} className="pointer-events-none" />
+        <div className="absolute inset-0 scrim-t" />
+      </div>
+
+      {/* Social rail: pinned to the right edge, vertically centered */}
+      <div className="absolute right-6 top-1/2 z-10 hidden -translate-y-1/2 flex-col items-center gap-4 lg:right-10 md:flex">
+        <span className="h-10 w-px bg-white/25" />
+        {SOCIALS.map(({ label, href, Icon }) => (
+          <a
+            key={label}
+            href={href}
+            aria-label={label}
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white/85 transition-colors hover:bg-white/20 hover:text-white"
+          >
+            <Icon className="h-[18px] w-[18px]" />
+          </a>
+        ))}
+        <span className="h-10 w-px bg-white/25" />
       </div>
 
       {/* Foreground */}
-      <div className="container relative flex flex-col items-center pb-20 pt-28 text-center md:pb-28 md:pt-36">
-        <span className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-white/90 backdrop-blur-sm">
-          <Sparkles className="h-3.5 w-3.5 text-gold" />
-          Explore Rwanda Differently
-        </span>
+      <div className="container relative flex flex-1 flex-col items-center justify-center pb-20 pt-28 text-center md:pb-28 md:pt-36">
+        <p className="eyebrow-gold">Rwanda Tours, Since 2021</p>
 
-        <h1 className="mt-7 max-w-5xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[4.75rem]">
-          Welcome to{" "}
-          <span className="mt-1 block font-display text-gold">
-            Unforgettable Rwanda
-          </span>
+        <h1 className="mt-5 max-w-4xl font-display text-5xl font-bold leading-[0.95] tracking-tight text-white sm:text-6xl md:text-7xl lg:text-[4.75rem]">
+          Rwanda, off the checklist.
         </h1>
 
-        {/* Services as small standalone cards instead of a sentence */}
-        <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
-          {SERVICES.map(({ label, Icon }) => (
-            <span
-              key={label}
-              className="inline-flex items-center gap-2 rounded-2xl border border-white/15 bg-white/10 px-4 py-2.5 text-sm font-medium text-white/90 backdrop-blur-sm"
-            >
+        {/* Services as a plain editorial line instead of boxed chips */}
+        <p className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm font-medium text-white/80 sm:text-base">
+          {SERVICES.map(({ label, Icon }, i) => (
+            <span key={label} className="inline-flex items-center gap-1.5">
+              {i > 0 && <span className="text-white/30">·</span>}
               <Icon className="h-4 w-4 text-gold" />
               {label}
             </span>
           ))}
-        </div>
+        </p>
 
         {/* Search trigger floats right, off-center from the text above */}
         <div className="mt-12 flex w-full justify-center md:mt-14 md:justify-end">
