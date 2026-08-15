@@ -10,7 +10,7 @@ const badgeVariants = cva(
         dark: "bg-forest/85 text-white backdrop-blur-sm",
         brand: "bg-brand text-white",
         gold: "bg-gold text-forest",
-        light: "bg-white/90 text-ink backdrop-blur-sm",
+        light: "bg-white/90 text-ink",
         easy: "bg-emerald-500 text-white",
         moderate: "bg-amber-100 text-amber-800",
         outline: "border border-white/70 text-white",

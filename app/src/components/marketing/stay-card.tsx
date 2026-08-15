@@ -25,7 +25,7 @@ export function StayCard({ item }: { item: Stay }) {
           <button
             type="button"
             aria-label="Save to wishlist"
-            className="flex h-8 w-8 items-center justify-center rounded-full bg-white/90 text-ink/70 backdrop-blur-sm transition-colors hover:text-brand"
+            className="flex h-8 w-8 items-center justify-center rounded-full bg-white text-ink/70 transition-colors hover:text-brand"
           >
             <Heart className="h-4 w-4" />
           </button>

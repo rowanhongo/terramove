@@ -11,10 +11,10 @@ export default function AdventuresPage() {
   return (
     <AppShell>
       <PageHero
-        eyebrow="Explore Rwanda"
-        title="Unforgettable"
-        accent="Adventures"
-        description="From gorilla families in misty volcanoes to sunset paddles on Lake Kivu — every experience is led by verified local guides."
+        eyebrow="Five Categories, One Country"
+        title="Gorillas get the headlines."
+        accent="These don't."
+        description="Sunset paddles on Lake Kivu, coffee-farm treks in the south, gorilla families in the misty north — every experience is led by verified local guides."
       />
 
       {/* Filter chips */}

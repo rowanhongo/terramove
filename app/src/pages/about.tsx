@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { Compass, Heart, Leaf, Users } from "lucide-react";
 import { AppShell } from "@/components/app-shell";
 import { PageHero } from "@/components/marketing/page-hero";
 import { Section } from "@/components/marketing/section";
@@ -12,22 +11,18 @@ const HERO_IMG =
 
 const VALUES = [
   {
-    Icon: Users,
     title: "Local at heart",
     body: "Every guide, host, and driver is Rwandan — sharing their home, not performing it.",
   },
   {
-    Icon: Leaf,
     title: "Tread lightly",
     body: "We cap group sizes and reinvest in conservation so the hills stay unspoiled.",
   },
   {
-    Icon: Compass,
     title: "Beyond the checkbox",
     body: "There's more to Rwanda than a single trek. We show you all of it.",
   },
   {
-    Icon: Heart,
     title: "Radically honest",
     body: "Flat pricing, no hidden fees, and free cancellation. The price you see is what you pay.",
   },
@@ -39,9 +34,9 @@ export default function AboutPage() {
       <PageHero
         variant="image"
         image={HERO_IMG}
-        eyebrow="Our Story"
-        title="Rwanda Deserves"
-        accent="Better Storytelling"
+        eyebrow="Founded in Kigali, 2021"
+        title="We got tired of the highlight reel,"
+        accent="so we started ignoring it."
         description="TerraMove was founded in 2021 by Rwandans who were tired of watching their country undersold to the world. We knew there was infinitely more to Rwanda than a single checkbox experience — and we set out to prove it."
       />
 
@@ -51,8 +46,8 @@ export default function AboutPage() {
           <div>
             <p className="eyebrow">The mission</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight text-ink sm:text-4xl">
-              We help the world meet the{" "}
-              <span className="text-brand">real Rwanda</span>.
+              Every itinerary starts with someone who grew up on these hills,{" "}
+              <span className="text-brand">not a script</span>.
             </h2>
             <p className="mt-5 leading-relaxed text-ink/65">
               From the misty volcanoes of the north to the shimmering shores of
@@ -69,19 +64,13 @@ export default function AboutPage() {
             </Button>
           </div>
 
-          <div className="grid grid-cols-2 gap-4">
-            {VALUES.map(({ Icon, title, body }) => (
-              <div
-                key={title}
-                className="rounded-2xl bg-white p-6 shadow-card"
-              >
-                <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-soft text-brand">
-                  <Icon className="h-5 w-5" />
-                </span>
-                <h3 className="mt-4 font-display text-lg font-bold text-ink">
+          <div className="space-y-5 lg:pt-2">
+            {VALUES.map(({ title, body }) => (
+              <div key={title} className="border-l-2 border-brand pl-4">
+                <h3 className="font-display text-lg font-bold text-ink">
                   {title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink/55">
+                <p className="mt-1 text-sm leading-relaxed text-ink/60">
                   {body}
                 </p>
               </div>
@@ -95,7 +84,7 @@ export default function AboutPage() {
         <div className="mx-auto max-w-2xl text-center">
           <p className="eyebrow-gold">Since 2021</p>
           <h2 className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl">
-            A journey worth <span className="text-gold">sharing</span>.
+            The numbers, so far
           </h2>
         </div>
         <div className="mt-10">

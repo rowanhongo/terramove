@@ -69,6 +69,15 @@
   .section-y {
     @apply py-16 md:py-24;
   }
+
+  /* Dark image scrims — one recipe shared by page heroes instead of each
+     file reinventing its own gradient stops. */
+  .scrim-b {
+    @apply bg-gradient-to-b from-forest/80 via-forest/55 to-forest/90;
+  }
+  .scrim-t {
+    @apply bg-gradient-to-t from-forest/70 via-forest/10 to-transparent;
+  }
 }
 
 @layer utilities {

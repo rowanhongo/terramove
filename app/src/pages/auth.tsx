@@ -27,7 +27,7 @@ export function AuthPage({ mode }: AuthPageProps) {
       {/* Visual side (desktop only) */}
       <aside className="relative hidden w-1/2 overflow-hidden lg:block">
         <Img src={AUTH_IMG} alt="" loading="eager" className="h-full w-full" />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest/60 via-forest/40 to-forest/85" />
+        <div className="absolute inset-0 scrim-b" />
         <div className="absolute inset-0 flex flex-col justify-between p-10 text-white">
           <Link to="/">
             <Logo tone="light" />

@@ -190,8 +190,8 @@ export interface Stat {
 }
 
 export const STATS: Stat[] = [
-  { value: "1,200+", label: "Adventurers Yearly", icon: "smile" },
-  { value: "42+", label: "Unique Experiences", icon: "mountain" },
-  { value: "98%", label: "Satisfaction Rate", icon: "star" },
-  { value: "5", label: "Languages Spoken", icon: "globe" },
+  { value: "1,240", label: "travelers guided since 2021", icon: "smile" },
+  { value: "38", label: "hand-picked experiences", icon: "mountain" },
+  { value: "4.8", label: "average trip rating", icon: "star" },
+  { value: "5", label: "languages spoken on tour", icon: "globe" },
 ];

@@ -15,23 +15,17 @@ export default function HomePage() {
         <DiscoverTabs />
       </Section>
 
-      {/* Closing CTA — light band with a soft warm glow instead of a solid
-          dark fill, so it doesn't stack into one giant dark block with the
-          footer right below it. */}
+      {/* Closing CTA — light band, plain text, no decoration. */}
       <Section tone="cream" className="section-y">
-        <div className="relative text-center">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-to-br from-brand/25 via-gold/20 to-transparent blur-3xl"
-          />
-          <p className="eyebrow relative">Ready When You Are</p>
-          <h2 className="relative mx-auto mt-3 max-w-2xl font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
-            Your Rwanda story starts with{" "}
-            <span className="text-brand">one click</span>.
+        <div className="text-center">
+          <p className="eyebrow">Next Departure: This Saturday</p>
+          <h2 className="mx-auto mt-3 max-w-2xl font-display text-3xl font-bold leading-tight text-ink md:text-4xl">
+            Most trips start with three questions: when, how many, how far.
+            Let's start there.
           </h2>
-          <div className="relative mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <Button asChild variant="primary" size="lg">
-              <Link to="/get-started">Start planning free</Link>
+              <Link to="/get-started">Plan my trip</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
               <Link to="/adventures">Browse adventures</Link>
